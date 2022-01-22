@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area</title>
+    <link rel="stylesheet" href="area.css">
+    <title>Triangle's Area</title>
 </head>
+
 <body>
     <nav>
-        <a href = "index.html">Is Triangle?</a>
-        <a href = "quiz.html">Triangle Quiz</a>
-        <a href = "hypo.html">Calculate Hypotenuse</a>
-        <a href = "area.html">Calculate Area</a>
+        <a href="istriangle.html">Is Triangle?</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="hypo.html">Hypotenuse</a>
+        <a href="area.html">Area</a>
     </nav>
-    <h1 class = "heading">Calculate Area</h1>
-    <h2 class = "area-heading">Area of Triangle = (1/2)*base*height</h2>
-    <label>base = </label>
-    <input type = "number" class = "side-input"/>
-    <label>height = </label>
-    <input type = "number" class = "side-input"/>
-
-    <button id = "area-btn">Calculate Area</button>
-    <div id = "output"></div>
-    <script src = "area.js"></script>
+    <div>
+        <h1>Check Area of Triangle</h1>
+        <label for="">Base </label>
+        <input type="number" min="0" oninput="this.value = Math.abs(this.value)" class="measurment-input">
+        <label for="">Height </label>
+        <input type="number" min="0" oninput="this.value = Math.abs(this.value)" class="measurment-input">
+        <br>
+        <button id="check-area-btn">Check Area</button>
+        <div id="output"></div>
+        <script src="area.js"></script>
+    </div>
 </body>
+
 </html>

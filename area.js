@@ -1,14 +1,24 @@
-const sides = document.querySelectorAll(".side-input");
-const areaBtn = document.querySelector("#area-btn");
+const measurment = document.querySelectorAll(".measurment-input");
+const checkAreaBtn = document.querySelector("#check-area-btn");
 const outputEl = document.querySelector("#output");
 
-function calculateArea(){
-    var base = Number(sides[0].value);
-    var height = Number(sides[1].value);
-    // console.log(base, height);
-    const finalArea = (1/2) * base * height; 
-    // console.log(finalArea)
-    outputEl.innerText = "The area of the triangle is " + finalArea;
+measurment.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
 }
 
-areaBtn.addEventListener("click", calculateArea);
+function calculateMulOf(a, b) {
+    const square = a * b;
+    return square;
+}
+
+function calculateArea() {
+    const square = calculateMulOf(Number(measurment[0].value), Number(measurment[1].value));
+    const finalArea = square / 2;
+    outputEl.textContent = "The Area is " + finalArea
+}
+
+checkAreaBtn.addEventListener("click", calculateArea);
